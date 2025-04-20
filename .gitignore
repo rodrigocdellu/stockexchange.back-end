@@ -1,0 +1,91 @@
+# Build Results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ASP.NET Core Secrets
+secrets.json
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Package caches
+packages/
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Logs
+*.log
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publish Output
+publish/
+*.pubxml
+*.publishproj
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotCover
+*.dcvr
+
+# Entity Framework Migrations
+Migrations/
+
+# dotnet-watch
+**/*.db
+
+# LocalDB
+*.mdf
+*.ldf
+
+# JetBrains Rider
+.idea/
+
+# Temporary files
+~$*
+*.tmp
+
+# Backup files
+*.bak
+
+# Auto-generated files
+Generated_Code/
+
+# VS for Mac
+.vscode/
+.vscode-test/
+
+# Global.json lock file
+global.json.lock
