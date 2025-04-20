@@ -1,18 +1,28 @@
+// 2025/02/20 - Required for Dependency Injection (IoC)
+using StockExchange.WebAPI.Service;
+
+// Create the application builder
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Add services to the container. Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// 2025/02/20 - Add the Dependency Injection (IoC)
+builder.Services.AddTransient<IContentService, ContentService>();
+
+// Build the application
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// 2025/02/20 - Add CORS for any origin (IoC)
+app.UseCors(option => option.AllowAnyOrigin());
 
 var summaries = new[]
 {
@@ -34,6 +44,7 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+// Run the application
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

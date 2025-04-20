@@ -1,0 +1,24 @@
+[
+    {
+      "currencies": [
+        {
+          "code": "AFN",
+          "name": "Afghan afghani",
+          "symbol": "؋"
+        }
+      ],
+      "name": "Afghanistan",
+      "capital": "Kabul"
+    },
+    {
+      "currencies": [
+        {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "name": "Åland Islands",
+      "capital": "Mariehamn"
+    }
+]
