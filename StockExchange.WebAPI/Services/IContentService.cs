@@ -1,6 +1,6 @@
-using StockExchange.WebAPI.Model;
+using StockExchange.WebAPI.Models;
 
-namespace StockExchange.WebAPI.Service;
+namespace StockExchange.WebAPI.Services;
 
 public interface IContentService
 {

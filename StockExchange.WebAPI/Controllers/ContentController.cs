@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using StockExchange.WebAPI.Service;
-using StockExchange.WebAPI.Model;
+using StockExchange.WebAPI.Services;
+using StockExchange.WebAPI.Models;
 
 namespace StockExchange.WebAPI.Controllers;
 

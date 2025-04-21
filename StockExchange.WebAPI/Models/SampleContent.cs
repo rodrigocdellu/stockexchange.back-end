@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace StockExchange.WebAPI.Model;
+namespace StockExchange.WebAPI.Models;
 
 public class SampleContent
 {

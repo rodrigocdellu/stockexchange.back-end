@@ -1,6 +1,6 @@
 // 2025/02/20 - Required for Dependency Injection (IoC)
 using Microsoft.OpenApi.Models;
-using StockExchange.WebAPI.Service;
+using StockExchange.WebAPI.Services;
 
 // 2025/02/20 - Define the policy name
 const string POLICYFORCORS = "StockExchangePolicy";
