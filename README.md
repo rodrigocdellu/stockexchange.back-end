@@ -6,14 +6,14 @@ Este repositório contém um projeto de exemplo para uma aplicação **back-end*
 
 ## 🛠️ Ambiente de Desenvolvimento
 
-### 🔧 Ferramentas Utilizadas para o Back-end
+### 🔧 Ferramentas Utilizadas para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
 
 - 🪟 **Sistema Operacional**: Windows 10 Pro  
 - ⚙️ **Framework**: .NET v8.0.408 (LTS)  
 - 📝 **Editor de Código**: Visual Studio Code v1.99.3  
 - 🐳 **Gerenciador de Contêineres**: Docker Desktop v4.40.0  
 
-### 🎨 Ferramentas Utilizadas para o Front-end
+### 🎨 Ferramentas Utilizadas para o [Front-end](https://github.com/rodrigocdellu/stockexchange.front-end)
 
 - 🐧 **Sistema Operacional**: Ubuntu 24.04 LTS  
 - 🌐 **Runtime JavaScript**: Node.js v22.14.0  
