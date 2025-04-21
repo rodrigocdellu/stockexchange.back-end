@@ -69,7 +69,7 @@ Por favor, siga as boas práticas de desenvolvimento e, se possível, adicione t
 
 ## 📄 Licença
 
-Este projeto está licenciado sob os termos da **MIT License**. Para mais informações, consulte o arquivo [`LICENSE`](./LICENSE).
+Este projeto está licenciado sob os termos da **MIT License**. Para mais informações, consulte o arquivo [`LICENSE`](./LICENSE.md).
 
 ---
 
