@@ -28,21 +28,17 @@ Este repositório contém um projeto de exemplo para uma aplicação **back-end*
 
 1. Certifique-se de que todas as ferramentas listadas no pacote de back-end estejam instaladas. E execute os seguintes comandos no **PowerShell (Windows)** ou no **Terminal (Linux)**:
 
-```bash
+```
 git clone git@github.com:rodrigocdellu/stockexchange.back-end.git;
 cd stockexchange.back-end/StockExchange.WebAPI/;
 dotnet run
 ```
 
-2. Navegue até o diretório do projeto desejado e execute o comando abaixo no **PowerShell (Windows)** ou no **Terminal (Linux)**:
+2. Após a execução, acesse a aplicação através do seguinte endereço:
 
-```bash
-dotnet run
-```
+[http://localhost:5041](http://localhost:5041)
 
-3. Após a execução, acesse a aplicação através do seguinte endereço:
-
-[http://localhost:PORTA/swagger/index.html](http://localhost:PORTA/swagger/index.html)
+**IMPORTANTE**: Antes de executar verifique se 5041 é a porta em que o .NET liberou a aplicação.
 
 ---
 
@@ -50,13 +46,13 @@ dotnet run
 
 1. Com o **Docker** devidamente instalado, execute o seguinte comando no diretório que contém o arquivo `Dockerfile`:
 
-```bash
+```
 docker build -t stockexchange.webapi .
 ```
 
 2. Após a criação da imagem, inicie o contêiner com o comando:
 
-```bash
+```
 docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 ```
 
