@@ -8,17 +8,17 @@ Este repositório contém um projeto de exemplo para uma aplicação **back-end*
 
 ### 🔧 Ferramentas Utilizadas para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
 
-- 🪟 **Sistema Operacional**: Windows 10 Pro  
-- ⚙️ **Framework**: .NET v8.0.408 (LTS)  
-- 📝 **Editor de Código**: Visual Studio Code v1.99.3  
-- 🐳 **Gerenciador de Contêineres**: Docker Desktop v4.40.0  
+- 🪟 **Sistema Operacional**: [Windows 10 Pro](#)  
+- ⚙️ **Framework**: [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
+- 📝 **Editor de Código**: [Visual Studio Code v1.99.3](https://code.visualstudio.com/download)  
+- 🐳 **Gerenciador de Contêineres**: [Docker Desktop v4.40.0](https://www.docker.com/products/docker-desktop)  
 
 ### 🎨 Ferramentas Utilizadas para o [Front-end](https://github.com/rodrigocdellu/stockexchange.front-end)
 
-- 🐧 **Sistema Operacional**: Ubuntu 24.04 LTS  
-- 🌐 **Runtime JavaScript**: Node.js v22.14.0  
-- 📦 **Gerenciador de Pacotes**: NPM v10.9.2  
-- 🧰 **Framework Front-end**: Angular CLI v19.2.8  
+- 🐧 **Sistema Operacional**: [Ubuntu 24.04 LTS](https://ubuntu.com/download/desktop)  
+- 🌐 **Runtime JavaScript**: [Node.js v22.14.0](https://nodejs.org/pt)  
+- 📦 **Gerenciador de Pacotes**: [NPM v10.9.2](https://www.npmjs.com/package/npm/v/10.9.2)  
+- 🧰 **Framework Front-end**: [Angular CLI v19.2.8](https://github.com/angular/angular-cli)  
 
 ---
 
@@ -50,7 +50,7 @@ docker build -t stockexchange.webapi .
 2. Após a criação da imagem, inicie o contêiner com o comando:
 
 ```bash
-docker run -d -p 7200:80 stockexchange.webapi
+docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 ```
 
 3. A aplicação poderá ser acessada em ambiente de produção pelo endereço:
@@ -61,7 +61,7 @@ docker run -d -p 7200:80 stockexchange.webapi
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas! Se você deseja sugerir melhorias, corrigir bugs ou adicionar novas funcionalidades, sinta-se à vontade para abrir uma [Issue](https://github.com/seu-usuario/seu-repositorio/issues) ou enviar um *Pull Request*.
+Contribuições são bem-vindas! Se você deseja sugerir melhorias, corrigir bugs ou adicionar novas funcionalidades, sinta-se à vontade para abrir uma [Issue](https://github.com/rodrigocdellu/stockexchange.back-end/issues) ou enviar um *Pull Request*.
 
 Por favor, siga as boas práticas de desenvolvimento e, se possível, adicione testes automatizados relacionados às suas alterações.
 
