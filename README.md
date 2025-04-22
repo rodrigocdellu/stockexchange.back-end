@@ -9,7 +9,7 @@ Este repositório contém um projeto de exemplo para uma aplicação **back-end*
 ### 🔧 Ferramentas Utilizadas para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
 
 - 🪟 **Sistema Operacional**: [Windows 10 Pro](#)  
-- ⚙️ **Framework**: [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
+- ⚙️ **Framework**: .NET v6.0.36 (LTS) com suporte ao [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
 - 📝 **Editor de Código**: [Visual Studio Code v1.99.3](https://code.visualstudio.com/download)  
 - 🐳 **Gerenciador de Contêineres**: [Docker Desktop v4.40.0](https://www.docker.com/products/docker-desktop)  
 
