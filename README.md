@@ -59,6 +59,12 @@ docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 
 ---
 
+4. Caso não consiga construir a imagem, pode baixá-la em:
+
+[https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi](https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi)
+
+---
+
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas! Se você deseja sugerir melhorias, corrigir bugs ou adicionar novas funcionalidades, sinta-se à vontade para abrir uma [Issue](https://github.com/rodrigocdellu/stockexchange.back-end/issues) ou enviar um *Pull Request*.
