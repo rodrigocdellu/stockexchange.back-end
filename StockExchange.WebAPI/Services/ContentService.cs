@@ -5,11 +5,13 @@ namespace StockExchange.WebAPI.Services;
 
 public class ContentService : IContentService
 {
-    List<SampleContent> CountriesInfo;
+    private const string FILEPATH = @"Data/SampleContent.json";
+
+    public List<SampleContent> CountriesInfo { get; set; }
     
     public ContentService()
     {
-        CountriesInfo = ReadFile();
+        this.CountriesInfo = ReadFile();
     }
 
     private List<SampleContent> ReadFile()
@@ -19,7 +21,7 @@ public class ContentService : IContentService
 
         try
         {
-            sampleContent = File.ReadAllText(@"Data/SampleContent.json");
+            sampleContent = File.ReadAllText(ContentService.FILEPATH);
 
             sampleContentDeserialized = JsonSerializer.Deserialize<List<SampleContent>>(sampleContent);
         }
@@ -33,11 +35,11 @@ public class ContentService : IContentService
 
     public List<SampleContent> GetAll()
     {
-        return CountriesInfo;
+        return this.CountriesInfo;
     }
 
     public SampleContent GetByID(int id)
     {
-        return CountriesInfo[id];
+        return this.CountriesInfo[id];
     }
 }

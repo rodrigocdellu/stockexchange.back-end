@@ -1,22 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Runtime.InteropServices;
+using StockExchange.WebAPI.Services;
 
 namespace StockExchange.WebAPI.Controllers;
 
 [ApiController]
 [Route("/")]
-public class HomeController : ControllerBase
+public sealed class HomeController : Controller
 {
-    // Saves the time the application started
-    private static readonly DateTime _StartupTime = DateTime.Now;
+    private readonly IApplicationService _ApplicationService;
+
+    public HomeController(IApplicationService applicationService)
+    {
+        this._ApplicationService = applicationService;
+    }
 
     [HttpGet]
     public ContentResult Index()
     {
         var now = DateTime.Now;
-        var version = RuntimeInformation.FrameworkDescription;
-        var uptime = now - _StartupTime;
+        var version = this._ApplicationService.FrameworkVersion;
+        var uptime = now - this._ApplicationService.StartupTime;
 
         string uptimeFormatted = $"{(int)uptime.TotalHours:D2}:{uptime.Minutes:D2}:{uptime.Seconds:D2}";
 
@@ -90,7 +93,7 @@ public class HomeController : ControllerBase
 
                     <script>
                         // Function to calculate uptime dynamically
-                        var startupTime = new Date('{_StartupTime:yyyy-MM-ddTHH:mm:ss}').getTime();
+                        var startupTime = new Date('{this._ApplicationService.StartupTime:yyyy-MM-ddTHH:mm:ss}').getTime();
 
                         setInterval(function() {{
                             var now = new Date().getTime();

@@ -6,24 +6,24 @@ namespace StockExchange.WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public class ContentController : Controller
+public sealed class ContentController : Controller
 {
-    IContentService _ContentService;
-
+    private readonly IContentService _ContentService;
+    
     public ContentController(IContentService contentService)
     {
-        _ContentService = contentService;
+        this._ContentService = contentService;
     }
     
     [HttpGet]
     public List<SampleContent> GetAll()
     {
-        return _ContentService.GetAll();
+        return this._ContentService.GetAll();
     }
 
     [HttpGet]
     public SampleContent GetByID(int id)
     {
-        return _ContentService.GetByID(id);
+        return this._ContentService.GetByID(id);
     }
 }
