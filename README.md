@@ -55,7 +55,7 @@ docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 
 3. A aplicação poderá ser acessada em ambiente de produção pelo endereço:
 
-[http://localhost:7200/swagger/index.html](http://localhost:7200/swagger/index.html)
+[http://localhost:7200](http://localhost:7200)
 
 ---
 
