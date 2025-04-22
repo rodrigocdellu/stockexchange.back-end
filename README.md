@@ -26,7 +26,14 @@ Este repositório contém um projeto de exemplo para uma aplicação **back-end*
 
 ### 💻 Ambiente de Desenvolvimento (Local)
 
-1. Certifique-se de que todas as ferramentas listadas no pacote de back-end estejam instaladas.
+1. Certifique-se de que todas as ferramentas listadas no pacote de back-end estejam instaladas. E execute os seguintes comandos no **PowerShell (Windows)** ou no **Terminal (Linux)**:
+
+```bash
+git clone git@github.com:rodrigocdellu/stockexchange.back-end.git;
+cd stockexchange.back-end/StockExchange.WebAPI/;
+dotnet run
+```
+
 2. Navegue até o diretório do projeto desejado e execute o comando abaixo no **PowerShell (Windows)** ou no **Terminal (Linux)**:
 
 ```bash
