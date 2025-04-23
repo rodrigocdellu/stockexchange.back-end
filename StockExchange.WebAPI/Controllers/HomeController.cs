@@ -5,7 +5,7 @@ namespace StockExchange.WebAPI.Controllers;
 
 [ApiController]
 [Route("/")]
-public sealed class HomeController : Controller
+public sealed class HomeController : ControllerBase
 {
     private readonly IApplicationService _ApplicationService;
 
