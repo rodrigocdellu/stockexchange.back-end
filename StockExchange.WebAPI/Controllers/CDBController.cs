@@ -8,9 +8,9 @@ namespace StockExchange.WebAPI.Controllers;
 [Route("[controller]/[action]")]
 public sealed class CdbController : ControllerBase
 {
-    private readonly ICDBService _CDBService;
+    private readonly ICdbService _CDBService;
     
-    public CdbController(ICDBService cdbService)
+    public CdbController(ICdbService cdbService)
     {
         this._CDBService = cdbService;
     }
