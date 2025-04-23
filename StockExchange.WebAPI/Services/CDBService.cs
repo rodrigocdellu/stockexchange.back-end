@@ -77,16 +77,16 @@ public class CdbService : ICdbService
         this.Retorno.ResultadoLiquido = lucro - imposto;
     }
 
-    public async Task<ServiceResultHelper<Retorno>> SolicitarCalculoInvestimento(decimal investimento, uint meses)
+    public Task<ServiceResultHelper<Retorno>> SolicitarCalculoInvestimento(decimal investimento, uint meses)
     {
         // Valida entradas   
         if (meses <= 0)
-            return ServiceResultHelper<Retorno>.Fail("O parâmetro 'meses' não pode ser negativo."); 
+            return Task.FromResult(ServiceResultHelper<Retorno>.Fail("O parâmetro 'meses' não pode ser negativo.")); 
         
         // Realiza os cálculos de investimento
         this.Calcula(investimento, meses);
         
         // Retorna o investimento
-        return ServiceResultHelper<Retorno>.Ok(this.Retorno);
+        return Task.FromResult(ServiceResultHelper<Retorno>.Ok(this.Retorno));
     }
 }
