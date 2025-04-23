@@ -13,7 +13,7 @@ public class CdbService : ICDBService
         this.Retorno = new Retorno();
     }
 
-    private decimal ObterAliquotaImposto(uint prazoMeses)
+    private static decimal ObterAliquotaImposto(uint prazoMeses)
     {
         // Até 06 meses: 22,5%
         if (prazoMeses <= 6)
@@ -71,7 +71,7 @@ public class CdbService : ICDBService
 
         // Cálculo do imposto sobre o lucro
         lucro = VF - VI;
-        imposto = lucro * this.ObterAliquotaImposto(meses);
+        imposto = lucro * CdbService.ObterAliquotaImposto(meses);
 
         // Prepara o objeto investimento
         this.Retorno.ResultadoBruto = lucro;
