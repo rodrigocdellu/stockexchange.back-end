@@ -4,7 +4,7 @@ using StockExchange.WebAPI.Models;
 
 namespace StockExchange.WebAPI.Services;
 
-public class CdbService : ICDBService
+public class CdbService : ICdbService
 {
     public Retorno Retorno { get; set; }
     

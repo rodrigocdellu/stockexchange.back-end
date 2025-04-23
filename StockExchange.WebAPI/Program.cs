@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen(options => { // 2025/04/20 - For Swagger to run i
     });
 });
 builder.Services.AddSingleton<IApplicationService, ApplicationService>(); // 2025/04/22 - To deal with application information
-builder.Services.AddTransient<ICDBService, CdbService>(); // 2025/04/22 - Add the Dependency Injection (IoC)
+builder.Services.AddTransient<ICdbService, CdbService>(); // 2025/04/22 - Add the Dependency Injection (IoC)
 
 // 2025/04/20 - Add CORS with a policy
 builder.Services.AddCors(options =>
