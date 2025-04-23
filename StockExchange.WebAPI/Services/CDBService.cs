@@ -14,7 +14,7 @@ public class CdbService : ICdbService
         this.Retorno = new Retorno();
     }
 
-    private static bool ValidaEstrutura(uint meses, decimal investimento, out string? mensagemValidacao)
+    private static bool ValidaEstrutura(ref uint meses, ref decimal investimento, out string? mensagemValidacao)
     {
         var investimentoValidado = 0m; // Define variável para testar o tipo do parâmetro investimento
         var mesesValidado = 0U; // Define variável para testar o tipo do parâmetro meses
@@ -64,6 +64,10 @@ public class CdbService : ICdbService
         }
 
         #endregion
+
+        // Atualiza as referências com os valores validados
+        meses = mesesValidado;
+        investimento = investimentoValidado;
 
         return estaValido;
     }
@@ -155,7 +159,7 @@ public class CdbService : ICdbService
         string? mensagemValidacao;
 
         // Aplica regras de validação estrutural
-        if (CdbService.ValidaEstrutura(meses, investimento, out mensagemValidacao))
+        if (CdbService.ValidaEstrutura(ref meses, ref investimento, out mensagemValidacao))
         {
             // Aplica regras de validação do negócio
             if (CdbService.ValidaNegocio(meses, out mensagemValidacao))
