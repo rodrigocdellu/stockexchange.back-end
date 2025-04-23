@@ -62,8 +62,8 @@ public class CdbService : ICDBService
         var CDI = 0.009m; // 0,9% = (0,9m / 100)
         var TB = 1.08m; // 108% = (108m / 100)
         var VF = VI; // Investimento mínimo
-        var lucro = decimal.Zero;
-        var imposto = decimal.Zero;
+        var lucro = 0m;
+        var imposto = 0m;
 
         // Cálculo dos juros compostos mês a mês
         for (uint mes = 0; mes < meses; mes++)
