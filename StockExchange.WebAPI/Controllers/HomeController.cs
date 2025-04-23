@@ -17,7 +17,7 @@ public sealed class HomeController : Controller
     [HttpGet]
     public ContentResult Index()
     {
-        var now = DateTime.Now;
+        var now = this._ApplicationService.StartupTime;
         var version = this._ApplicationService.FrameworkVersion;
         var uptime = now - this._ApplicationService.StartupTime;
 
