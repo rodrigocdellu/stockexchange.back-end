@@ -36,15 +36,6 @@ builder.Services.AddCors(options =>
 // Build the application
 var app = builder.Build();
 
-/* ToDo: 2025/04/20 - Maybe remove this later.
-// Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-*/
-
 app.UseSwagger(); // 2025/04/20 - For Swagger to run in the production environment
 app.UseSwaggerUI(); // 2025/04/20 - For Swagger to run in the production environment
 app.UseCors(POLICYFORCORS); // 2025/04/20 - Use CORS with the policy created
