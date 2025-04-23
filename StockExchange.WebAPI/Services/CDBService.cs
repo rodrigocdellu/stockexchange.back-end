@@ -1,5 +1,3 @@
-using System.Net.Http.Headers;
-using System.Text.Json;
 using StockExchange.WebAPI.Models;
 
 namespace StockExchange.WebAPI.Services;

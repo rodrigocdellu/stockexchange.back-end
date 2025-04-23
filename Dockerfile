@@ -12,11 +12,11 @@ COPY ["StockExchange.WebAPI/StockExchange.WebAPI.csproj", "StockExchange.WebAPI/
 RUN dotnet restore "StockExchange.WebAPI/StockExchange.WebAPI.csproj"
 COPY . .
 WORKDIR "/src/StockExchange.WebAPI"
-RUN dotnet build "StockExchange.WebAPI.csproj" -c $configuration -o /app/build
+RUN dotnet build "StockExchange.WebAPI.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "StockExchange.WebAPI.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "StockExchange.WebAPI.csproj" -c "$configuration" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
