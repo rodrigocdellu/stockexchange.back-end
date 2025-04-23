@@ -4,11 +4,11 @@ using StockExchange.WebAPI.Models;
 
 namespace StockExchange.WebAPI.Services;
 
-public class CDBService : ICDBService
+public class CdbService : ICDBService
 {
     public Retorno Retorno { get; set; }
     
-    public CDBService()
+    public CdbService()
     {
         this.Retorno = new Retorno();
     }
