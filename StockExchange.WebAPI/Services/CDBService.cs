@@ -18,7 +18,7 @@ public class CdbService : ICdbService
     {
         var investimentoValidado = 0m; // Define variável para testar o tipo do parâmetro investimento
         var mesesValidado = 0U; // Define variável para testar o tipo do parâmetro meses
-        var pattern = @"^[+-]?\d+([.,]\d+)?$"; // Regex para decimal com ponto ou vírgula
+        var regex = @"^[+-]?\d+([.,]\d+)?$"; // Regex para decimal com ponto ou vírgula
         var estaValido = false; // O estado inicial é inválido
 
         // A mensagem de validação inicial é vazia
@@ -27,7 +27,7 @@ public class CdbService : ICdbService
         #region Validação de Formato
         
         // Verifica o formato do parâmetro investimento
-        estaValido = Regex.IsMatch(investimento.ToString(CultureInfo.InvariantCulture), pattern);
+        estaValido = Regex.IsMatch(investimento.ToString(CultureInfo.InvariantCulture), regex, RegexOptions.None, TimeSpan.FromMilliseconds(1000));
         
         // Valida o o formato e define a mensagem
         if (!estaValido)
