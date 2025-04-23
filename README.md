@@ -9,7 +9,7 @@ Este repositório contém uma aplicação **back-end** desenvolvida em **.NET Co
 - 🖥 **Sistema Operacional 1**: [Windows 10 Pro](#)
 - 🐧 **Sistema Operacional 2**: [Ubuntu 24.04 LTS](https://ubuntu.com/download/desktop)  
 - 📝 **Editor de Código 1**: [Visual Studio Code v1.99.3](https://code.visualstudio.com/download)
-- 📝 **Editor de Código 2**: [Visual Studio v1.99.3](https://visualstudio.microsoft.com/pt-br/downloads)  
+- 📝 **Editor de Código 2**: [Visual Studio 2022 Community v17.13.6](https://visualstudio.microsoft.com/pt-br/downloads)  
 - 🐳 **Gerenciador de Contêineres**: [Docker Desktop v4.40.0](https://www.docker.com/products/docker-desktop)
 - 👀 **Analisador de Código Estático**: [SonarQube Cloud](https://sonarcloud.io)  
 
