@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using StockExchange.WebAPI.Services;
 using StockExchange.WebAPI.Models;
+using System.Threading.Tasks;
+using System.Net;
 
 namespace StockExchange.WebAPI.Controllers;
 
@@ -16,8 +18,24 @@ public sealed class CdbController : ControllerBase
     }
     
     [HttpGet("SolicitarCalculoInvestimento")]
-    public Retorno SolicitarCalculoInvestimento(decimal investimento, uint meses)
+    public async Task<IActionResult> SolicitarCalculoInvestimento(decimal investimento, uint meses)
     {
-        return this._CDBService.SolicitarCalculoInvestimento(investimento, meses);
+        try
+        {
+            // Await the service result
+            var result = await this._CDBService.SolicitarCalculoInvestimento(investimento, meses);
+
+            // Validate the result
+            if (!result.Success)
+                return BadRequest(new { error = result.ErrorMessage });
+
+            // Return the result
+            return Ok(result.Data);
+        }
+        catch (Exception exception)
+        {
+            // Return error result
+            return StatusCode(Convert.ToInt32(HttpStatusCode.InternalServerError), exception);
+        }
     }     
 }

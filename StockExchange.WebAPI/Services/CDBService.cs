@@ -1,4 +1,5 @@
 using StockExchange.WebAPI.Models;
+using StockExchange.WebAPI.Helpers;
 
 namespace StockExchange.WebAPI.Services;
 
@@ -76,19 +77,16 @@ public class CdbService : ICdbService
         this.Retorno.ResultadoLiquido = lucro - imposto;
     }
 
-    public Retorno SolicitarCalculoInvestimento(decimal investimento, uint meses)
+    public async Task<ServiceResultHelper<Retorno>> SolicitarCalculoInvestimento(decimal investimento, uint meses)
     {
         // Valida entradas   
         if (meses <= 0)
-        {
-            // ToDo: Validade this later.
-            throw new NotImplementedException();
-        }
+            return ServiceResultHelper<Retorno>.Fail("O parâmetro 'meses' não pode ser negativo."); 
         
         // Realiza os cálculos de investimento
         this.Calcula(investimento, meses);
         
         // Retorna o investimento
-        return this.Retorno;
+        return ServiceResultHelper<Retorno>.Ok(this.Retorno);
     }
 }

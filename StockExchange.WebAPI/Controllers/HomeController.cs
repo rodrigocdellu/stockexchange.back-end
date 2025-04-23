@@ -17,6 +17,7 @@ public sealed class HomeController : ControllerBase
     [HttpGet]
     public ContentResult Index()
     {
+        var timezone = this._ApplicationService.TimeZone;
         var now = this._ApplicationService.StartupTime;
         var version = this._ApplicationService.FrameworkVersion;
         var uptime = now - this._ApplicationService.StartupTime;
@@ -80,7 +81,8 @@ public sealed class HomeController : ControllerBase
                 <body>
                     <div class=""card"">
                         <h1>Status da StockExchange.WebAPI</h1>
-                        <p><strong>Data e Hora:</strong> {now:yyyy-MM-dd HH:mm:ss}</p>
+                        <p><strong>Fuso Horário:</strong> {timezone}</p>
+                        <p><strong>Data de Início:</strong> {now:yyyy-MM-dd HH:mm:ss}</p>
                         <p><strong>Versão do .NET:</strong> {version}</p>
                         <p><strong>Uptime:</strong> <span id=""uptime"">{uptimeFormatted}</span> (hh:mm:ss)</p>
                         <p>

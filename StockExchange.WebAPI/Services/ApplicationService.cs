@@ -5,6 +5,8 @@ namespace StockExchange.WebAPI.Services;
 
 public class ApplicationService : IApplicationService
 {
+    public string? TimeZone { get; set; }
+
     public DateTime StartupTime { get; set; }
 
     public string? FrameworkVersion { get; set;}
@@ -13,20 +15,26 @@ public class ApplicationService : IApplicationService
     {
         // Looking for a Brazil/SãoPaulo timezone due to Docker Container timezone
         var brazilTimeZone = TimeZoneInfo.GetSystemTimeZones()
-            .FirstOrDefault(tz =>
-                (tz.Id.Contains("Brazil", StringComparison.OrdinalIgnoreCase) ||
-                tz.Id.Contains("E. South America", StringComparison.OrdinalIgnoreCase) ||
-                tz.Id.Contains("America/Sao_Paulo", StringComparison.OrdinalIgnoreCase) ||
-                tz.DisplayName.Contains("Brazil", StringComparison.OrdinalIgnoreCase) ||
-                tz.DisplayName.Contains("Sao Paulo", StringComparison.OrdinalIgnoreCase)) &&
-                tz.GetUtcOffset(DateTime.Now) == TimeSpan.FromHours(-3)
+            .FirstOrDefault(internalTimeZone =>
+                (internalTimeZone.Id.Contains("Brazil", StringComparison.OrdinalIgnoreCase) ||
+                internalTimeZone.Id.Contains("E. South America", StringComparison.OrdinalIgnoreCase) ||
+                internalTimeZone.Id.Contains("America/Sao_Paulo", StringComparison.OrdinalIgnoreCase) ||
+                internalTimeZone.DisplayName.Contains("Brazil", StringComparison.OrdinalIgnoreCase) ||
+                internalTimeZone.DisplayName.Contains("Sao Paulo", StringComparison.OrdinalIgnoreCase)) &&
+                internalTimeZone.GetUtcOffset(DateTime.Now) == TimeSpan.FromHours(-3)
             );
 
         // If the Brazil/SãoPaulo timezone was not found, used the UTC timezone
         if (brazilTimeZone == null)
+        {
+            this.TimeZone = TimeZoneInfo.Local.DisplayName;
             this.StartupTime = DateTime.UtcNow;
+        }
         else
+        {
+            this.TimeZone = brazilTimeZone.DisplayName;
             this.StartupTime = DateTime.UtcNow.ConvertToLocalTime(brazilTimeZone.Id);
+        }
 
         this.FrameworkVersion = RuntimeInformation.FrameworkDescription;
     }
