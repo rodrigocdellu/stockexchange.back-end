@@ -2,8 +2,6 @@
 
 Este repositório contém uma aplicação **back-end** desenvolvida em **.NET Core** para o setor financeiro com o objetivo de aprender e exercitar novas tecnologias e conceitos.
 
----
-
 ## 🛠️ Ambiente de Desenvolvimento
 
 ### 🔧 Ferramentas Utilizadas
@@ -26,8 +24,6 @@ Este repositório contém uma aplicação **back-end** desenvolvida em **.NET Co
 - 📦 **Gerenciador de Pacotes**: [NPM v10.9.2](https://www.npmjs.com/package/npm/v/10.9.2)  
 - 🧰 **Framework Front-end**: [Angular CLI v19.2.8](https://github.com/angular/angular-cli)  
 
----
-
 ## 🚀 Ambientes de Execução
 
 ### 💻 Ambiente de Desenvolvimento (Local)
@@ -45,8 +41,6 @@ dotnet run
 [http://localhost:5041](http://localhost:5041)
 
 **IMPORTANTE**: Antes de executar verifique se 5041 é a porta em que o .NET liberou a aplicação.
-
----
 
 ### 📦 Ambiente de Produção (Docker)
 
@@ -66,13 +60,9 @@ docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 
 [http://localhost:7200](http://localhost:7200)
 
----
-
 4. Caso não consiga construir a imagem, pode baixá-la em:
 
 [https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi](https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi)
-
----
 
 ## 💕 Clean Code
 
@@ -84,13 +74,9 @@ Contribuições são bem-vindas! Se você deseja sugerir melhorias, corrigir bug
 
 Por favor, siga as boas práticas de desenvolvimento e, se possível, adicione testes automatizados relacionados às suas alterações.
 
----
-
 ## 📄 Licença
 
 Este projeto está licenciado sob os termos da **MIT License**. Para mais informações, consulte o arquivo [`LICENSE`](./LICENSE.md).
-
----
 
 ## 📬 Contato
 
