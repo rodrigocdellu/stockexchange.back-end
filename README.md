@@ -1,19 +1,25 @@
 # 📈 stockexchange.back-end
 
-Este repositório contém um projeto de exemplo para uma aplicação **back-end** desenvolvida com **.NET Core**.
+Este repositório contém uma aplicação **back-end** desenvolvida em **.NET Core** para o setor financeiro com o objetivo de aprender e exercitar novas tecnologias e conceitos.
 
 ---
 
 ## 🛠️ Ambiente de Desenvolvimento
 
-### 🔧 Ferramentas Utilizadas para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
+### 🔧 Ferramentas Utilizadas
 
-- 🪟 **Sistema Operacional**: [Windows 10 Pro](#)  
-- ⚙️ **Framework**: .NET v6.0.36 (LTS) com suporte ao [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
-- 📝 **Editor de Código**: [Visual Studio Code v1.99.3](https://code.visualstudio.com/download)  
-- 🐳 **Gerenciador de Contêineres**: [Docker Desktop v4.40.0](https://www.docker.com/products/docker-desktop)  
+- 🖥 **Sistema Operacional 1**: [Windows 10 Pro](#)
+- 🐧 **Sistema Operacional 2**: [Ubuntu 24.04 LTS](https://ubuntu.com/download/desktop)  
+- 📝 **Editor de Código 1**: [Visual Studio Code v1.99.3](https://code.visualstudio.com/download)
+- 📝 **Editor de Código 2**: [Visual Studio v1.99.3](https://visualstudio.microsoft.com/pt-br/downloads)  
+- 🐳 **Gerenciador de Contêineres**: [Docker Desktop v4.40.0](https://www.docker.com/products/docker-desktop)
+- 👀 **Analisador de Código Estático**: [SonarQube Cloud](https://sonarcloud.io)  
 
-### 🎨 Ferramentas Utilizadas para o [Front-end](https://github.com/rodrigocdellu/stockexchange.front-end)
+### 🔧 Pacotes Utilizados para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
+
+- ⚙️ **Framework**: [.NET v6.0.36 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) com suporte ao [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
+  
+### 🎨 Pacotes Utilizados para o [Front-end](https://github.com/rodrigocdellu/stockexchange.front-end)
 
 - 🐧 **Sistema Operacional**: [Ubuntu 24.04 LTS](https://ubuntu.com/download/desktop)  
 - 🌐 **Runtime JavaScript**: [Node.js v22.14.0](https://nodejs.org/pt)  
@@ -26,7 +32,7 @@ Este repositório contém um projeto de exemplo para uma aplicação **back-end*
 
 ### 💻 Ambiente de Desenvolvimento (Local)
 
-1. Certifique-se de que todas as ferramentas listadas no pacote de back-end estejam instaladas. E execute os seguintes comandos no **PowerShell (Windows)** ou no **Terminal (Linux)**:
+1. Certifique-se de que todas as ferramentas e pacotes utilizados estejam instaladas e funcionando. Os comandos a seguir podem ser executados no **PowerShell (Windows)** ou no **Terminal (Linux)**:
 
 ```
 git clone git@github.com:rodrigocdellu/stockexchange.back-end.git;
@@ -67,6 +73,10 @@ docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 [https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi](https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi)
 
 ---
+
+## 💕 Clean Code
+
+Aqui disponibilizo os [resultados da analise estática de cógido](https://sonarcloud.io/organizations/rodrigocdellu/projects) com as configurações padrão do SonarQube Cloud.
 
 ## 🤝 Contribuições
 
