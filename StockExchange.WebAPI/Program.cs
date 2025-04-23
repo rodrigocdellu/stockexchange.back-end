@@ -51,4 +51,4 @@ app.UseCors(POLICYFORCORS); // 2025/04/20 - Use CORS with the policy created
 app.MapControllers(); // 2025/04/20 - Map the application controllers
 
 // Run the application
-app.Run();
+await app.RunAsync();
