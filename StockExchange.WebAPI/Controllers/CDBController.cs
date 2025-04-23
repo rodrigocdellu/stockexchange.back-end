@@ -6,11 +6,11 @@ namespace StockExchange.WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public sealed class CDBController : ControllerBase
+public sealed class CdbController : ControllerBase
 {
     private readonly ICDBService _CDBService;
     
-    public CDBController(ICDBService cdbService)
+    public CdbController(ICDBService cdbService)
     {
         this._CDBService = cdbService;
     }
