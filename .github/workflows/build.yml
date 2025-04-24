@@ -53,9 +53,9 @@ jobs:
       - name: Build the project
         shell: powershell
         run: dotnet build --no-restore
-      - name: Run tests
+      - name: Run tests with coverage
         shell: powershell
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
