@@ -6,6 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockExchange.WebAPI", "StockExchange.WebAPI\StockExchange.WebAPI.csproj", "{FEDFF80D-175D-9B89-F647-57876E056004}"
 EndProject
 
+# ❌ Removido o projeto StockExchange.AngularUI que era do tipo Website (incompatível com dotnet build)
+# Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StockExchange.AngularUI", "..\stockexchange.front-end\StockExchange.AngularUI\", "{0973E7F5-73A4-9BDA-1459-CF45D102E019}"
+#     ProjectSection(WebsiteProperties) = preProject
+#         ...
+#     EndProjectSection
+# EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,7 +23,13 @@ Global
 		{FEDFF80D-175D-9B89-F647-57876E056004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FEDFF80D-175D-9B89-F647-57876E056004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEDFF80D-175D-9B89-F647-57876E056004}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEDFF80D-175D-9B89-F647-57876E056004}.Release|Any CPU.Build.0 = Release|Any CPU	
+		{FEDFF80D-175D-9B89-F647-57876E056004}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		# ❌ Removidas as linhas de configuração do projeto Website
+		# {0973E7F5-73A4-9BDA-1459-CF45D102E019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		# {0973E7F5-73A4-9BDA-1459-CF45D102E019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		# {0973E7F5-73A4-9BDA-1459-CF45D102E019}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		# {0973E7F5-73A4-9BDA-1459-CF45D102E019}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 
 	GlobalSection(SolutionProperties) = preSolution
