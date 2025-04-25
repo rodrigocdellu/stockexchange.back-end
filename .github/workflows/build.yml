@@ -68,11 +68,14 @@ jobs:
       - name: Run tests with coverage and TRX report
         shell: powershell
         run: |
-          dotnet test --verbosity normal `
+          dotnet test --no-build --verbosity normal `
             --logger:"trx;LogFileName=TestResults.trx" `
-            /p:CollectCoverage=true `
-            /p:CoverletOutputFormat=opencover `
-            /p:CoverletOutput=./TestResults/coverage.opencover.xml
+            --collect:"XPlat Code Coverage"
+
+      - name: Convert coverage to opencover
+        run: |
+          dotnet tool install --global dotnet-reportgenerator-globaltool
+          reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:SonarQube
 
       - name: List files in TestResults
         shell: powershell
