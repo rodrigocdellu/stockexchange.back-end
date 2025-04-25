@@ -54,8 +54,9 @@ jobs:
             /o:"rodrigocdellu" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
-            /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" `
-            /d:sonar.cs.vstest.reportsPaths="**/TestResults.trx"
+            /d:sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/**/coverage.opencover.xml `
+            /d:sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/*.trx `
+            /d:sonar.cs.nunit.reportsPaths=$(Agent.TempDirectory)/*.trx
 
       - name: Restore dependencies
         shell: powershell
@@ -72,13 +73,12 @@ jobs:
             --logger:"trx;LogFileName=TestResults.trx" `
             /p:CollectCoverage=true `
             /p:CoverletOutputFormat=opencover `
-            /p:CoverletOutput=./TestResults/coverage.opencover.xml
+            /p:CoverletOutput=$(Build.SourcesDirectory)/**/coverage.opencover.xml
 
       - name: List files in TestResults
         shell: powershell
         run: |
           Get-ChildItem -Recurse ./TestResults
-
 
       - name: End Sonar analysis
         env:
