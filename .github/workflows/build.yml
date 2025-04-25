@@ -76,7 +76,7 @@ jobs:
       - name: Convert coverage to opencover
         run: |
           dotnet tool install --global dotnet-reportgenerator-globaltool
-          reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coveragereport -reporttypes:SonarQube
+          reportgenerator -reports:D:\a\stockexchange.back-end\stockexchange.back-end\StockExchange.WebAPI.Test\TestResults\**\coverage.cobertura.xml -targetdir:coveragereport -reporttypes:SonarQube
 
       - name: List files in TestResults
         shell: powershell
