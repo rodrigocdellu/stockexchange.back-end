@@ -54,7 +54,7 @@ jobs:
             /o:"rodrigocdellu" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
-            /d:sonar.cs.opencover.reportsPaths=**/coveragereport/SonarQube.xml `
+            /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coverage.opencover.xml `
             /d:sonar.cs.vstest.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx `
             /d:sonar.cs.nunit.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx
 
