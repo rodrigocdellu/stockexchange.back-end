@@ -74,6 +74,11 @@ jobs:
             /p:CoverletOutputFormat=opencover `
             /p:CoverletOutput=./TestResults/coverage.opencover.xml
 
+      - name: List files in TestResults
+        shell: powershell
+        run: |
+          Get-ChildItem -Recurse ./TestResults
+
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
