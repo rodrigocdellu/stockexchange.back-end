@@ -16,11 +16,10 @@ public class UT_DateTimeHelper
         // Load data
         var brasilianTimeZone = TestHelper.GetBrasilianTimeZone();
 
-        // Do the tests
-        Assert.Multiple(() =>
-        {
-            Assert.That(brasilianTimeZone, Is.Not.Null);
-            Assert.That(() => DateTime.Now.ConvertToLocalTime(brasilianTimeZone.Id), Throws.Exception);
-        });
+        // If there is no data, the test fail
+        if (brasilianTimeZone == null)
+            Assert.Fail();
+        else
+            Assert.That(() => DateTime.Now.ConvertToLocalTime(brasilianTimeZone.Id), Throws.Exception);        
     }
 }
