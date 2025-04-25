@@ -78,7 +78,6 @@ jobs:
           name: Tests
           path: '**/StockExchange.WebAPI.Test/TestResults/TestResults.trx'
           reporter: dotnet-trx
-          output: '**/StockExchange.WebAPI.Test/TestResults/TestResultsForSonar.xml'
 
       - name: End Sonar analysis
         env:
