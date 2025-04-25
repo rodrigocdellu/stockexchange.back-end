@@ -16,6 +16,7 @@ Este repositório contém uma aplicação **back-end** desenvolvida em **.NET Co
 ### 🔧 Pacotes Utilizados para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
 
 - ⚙️ **Framework**: [.NET v6.0.36 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) com suporte ao [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
+- 🐞 **Framework**: [NUnit v3.14.0](https://www.nuget.org/packages/NUnit/3.14.0)  
   
 ### 🎨 Pacotes Utilizados para o [Front-end](https://github.com/rodrigocdellu/stockexchange.front-end)
 
