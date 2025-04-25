@@ -59,7 +59,7 @@ jobs:
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coverage.opencover.xml `
-            /d:sonar.testExecutionReportPaths=StockExchange.WebAPI.Test/TestResults/TestResults.xml `
+            /d:sonar.nunit.reportPaths=StockExchange.WebAPI.Test/TestResults/TestResults.trx `
 
       - name: Restore dependencies
         shell: powershell
@@ -75,14 +75,7 @@ jobs:
           dotnet test --no-build --verbosity normal `
             --logger:"trx;LogFileName=TestResults.trx" `
             --collect:"XPlat Code Coverage;Format=opencover" `
-            --results-directory:"StockExchange.WebAPI.Test/TestResults"
-
-      - name: Convert .trx to JUnit XML (for SonarCloud)
-        uses: dorny/test-reporter@v1
-        with:
-          name: Tests
-          path: '**/TestResults/**/*.trx'
-          reporter: dotnet-trx
+            --results-directory:"StockExchange.WebAPI.Test/TestResults"      
 
       - name: End Sonar analysis
         env:
