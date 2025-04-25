@@ -54,9 +54,9 @@ jobs:
             /o:"rodrigocdellu" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
-            /d:sonar.cs.opencover.reportsPaths=D:\a\stockexchange.back-end\stockexchange.back-end\StockExchange.WebAPI.Test\TestResults\**\coverage.cobertura.xml `
-            /d:sonar.cs.vstest.reportsPaths=D:\a\stockexchange.back-end\stockexchange.back-end\StockExchange.WebAPI.Test\TestResults\TestResults.trx `
-            /d:sonar.cs.nunit.reportsPaths=D:\a\stockexchange.back-end\stockexchange.back-end\StockExchange.WebAPI.Test\TestResults\TestResults.trx
+            /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coverage.cobertura.xml `
+            /d:sonar.cs.vstest.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx `
+            /d:sonar.cs.nunit.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx
 
       - name: Restore dependencies
         shell: powershell
@@ -71,17 +71,17 @@ jobs:
         run: |
           dotnet test --no-build --verbosity normal `
             --logger:"trx;LogFileName=TestResults.trx" `
-            --collect:"XPlat Code Coverage"
+            --collect:"XPlat Code Coverage;Format=cobertura,opencover"
 
       - name: Convert coverage to opencover
         run: |
           dotnet tool install --global dotnet-reportgenerator-globaltool
-          reportgenerator -reports:D:\a\stockexchange.back-end\stockexchange.back-end\StockExchange.WebAPI.Test\TestResults\**\coverage.cobertura.xml -targetdir:coveragereport -reporttypes:SonarQube
+          reportgenerator -reports:**/StockExchange.WebAPI.Test/TestResults/*/coverage.cobertura.xml -targetdir:coveragereport -reporttypes:SonarQube
 
       - name: List files in TestResults
         shell: powershell
         run: |
-          Get-ChildItem -Recurse ./TestResults
+          Get-ChildItem -Recurse **/StockExchange.WebAPI.Test/TestResults/
 
       - name: End Sonar analysis
         env:
