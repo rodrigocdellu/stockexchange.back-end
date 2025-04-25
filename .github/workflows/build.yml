@@ -55,8 +55,8 @@ jobs:
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml `
-            /d:sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/*.trx `
-            /d:sonar.cs.nunit.reportsPaths=$(Agent.TempDirectory)/*.trx
+            /d:sonar.cs.vstest.reportsPaths=**/*.trx `
+            /d:sonar.cs.nunit.reportsPaths=**/*.trx
 
       - name: Restore dependencies
         shell: powershell
