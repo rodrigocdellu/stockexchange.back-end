@@ -6,6 +6,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+  checks: write
+
 jobs:
   build:
     name: Analyze, Build and Test
@@ -55,7 +59,7 @@ jobs:
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coverage.opencover.xml `
-            /d:sonar.testExecutionReportPaths=**/StockExchange.WebAPI.Test/TestResults/TestResultsForSonar.xml `
+            /d:sonar.testExecutionReportPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.xml `
 
       - name: Restore dependencies
         shell: powershell
