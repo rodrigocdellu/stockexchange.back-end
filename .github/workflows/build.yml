@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and analyze
+    name: Analyze, Build and Test
     runs-on: windows-latest
 
     steps:
@@ -55,8 +55,7 @@ jobs:
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coverage.opencover.xml `
-            /d:sonar.cs.vstest.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx `
-            /d:sonar.cs.nunit.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx
+            /d:sonar.testExecutionReportPaths=**/StockExchange.WebAPI.Test/TestResults/TestResultsForSonar.xml `
 
       - name: Restore dependencies
         shell: powershell
@@ -71,17 +70,12 @@ jobs:
         run: |
           dotnet test --no-build --verbosity normal `
             --logger:"trx;LogFileName=TestResults.trx" `
-            --collect:"XPlat Code Coverage;Format=cobertura,opencover"
+            --collect:"XPlat Code Coverage;Format=opencover"
 
-      - name: Convert coverage to opencover
+      - name: Convert TRX to SonarQube format
         run: |
-          dotnet tool install --global dotnet-reportgenerator-globaltool
-          reportgenerator -reports:**/StockExchange.WebAPI.Test/TestResults/*/coverage.cobertura.xml -targetdir:coveragereport -reporttypes:SonarQube
-
-      - name: List files in TestResults
-        shell: powershell
-        run: |
-          Get-ChildItem -Recurse **/StockExchange.WebAPI.Test/TestResults/
+          dotnet tool install --global trx2sonar
+          trx2sonar **/StockExchange.WebAPI.Test/TestResults/TestResults.trx -o TestResults/TestResultsForSonar.xml
 
       - name: End Sonar analysis
         env:
