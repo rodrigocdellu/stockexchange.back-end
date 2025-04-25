@@ -16,10 +16,10 @@ public class UT_ApplicationService
     public void Test_FusoHorario()
     {
         // Load data
-        var brasilianTimEZone = TestHelper.GetBrasilianTimeZone();
+        var brasilianTimeZone = TestHelper.GetBrasilianTimeZone();
 
         // Do the tests
-        Assert.That(brasilianTimEZone, Is.Not.Null);
+        Assert.That(brasilianTimeZone, Is.Not.Null);
 
         // Create the service
         this._ApplicationService = new ApplicationService();
@@ -32,7 +32,7 @@ public class UT_ApplicationService
         {
             Assert.That(retorno, Is.Not.Null);
             Assert.That(retorno, Is.Not.Empty);
-            Assert.That(retorno, Is.EqualTo(brasilianTimEZone.DisplayName));
+            Assert.That(retorno, Is.EqualTo(brasilianTimeZone.DisplayName));
         });
     }
 
