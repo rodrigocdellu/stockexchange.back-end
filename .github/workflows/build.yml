@@ -66,7 +66,7 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run tests with Code Coverage and TRX Report
-        if: success() || failure()
+        continue-on-error: true # To see the failure on SonarQube Cloud
         shell: powershell
         run: |
           dotnet test --no-build --verbosity normal `
