@@ -1,5 +1,5 @@
-using StockExchange.WebAPI.Models;
 using StockExchange.WebAPI.Helpers;
+using StockExchange.WebAPI.Models;
 
 namespace StockExchange.WebAPI.Services;
 

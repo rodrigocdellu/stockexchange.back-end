@@ -32,4 +32,10 @@
     <ProjectReference Include="..\StockExchange.WebAPI\StockExchange.WebAPI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\RetornoSample.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
