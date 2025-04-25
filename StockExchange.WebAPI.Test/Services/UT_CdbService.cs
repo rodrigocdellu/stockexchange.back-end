@@ -48,7 +48,12 @@ public class UT_CdbService
                 if (retorno == null)
                     Assert.Fail();
                 else
-                    Assert.That(retorno.ResultadoBruto, Is.EqualTo(resultadoBruto));
+                    // Do the tests
+                    Assert.Multiple(() =>
+                    {
+                        Assert.That(retorno.ResultadoBruto, Is.EqualTo(resultadoBruto));
+                        Assert.That(retorno.ResultadoLiquido, Is.EqualTo(resultadoLiquido));
+                    });
             }
         }
     }
@@ -87,7 +92,12 @@ public class UT_CdbService
                 if (retorno == null)
                     Assert.Fail();
                 else
-                    Assert.That(retorno.ResultadoBruto, !Is.EqualTo(resultadoBruto));
+                    // Do the tests
+                    Assert.Multiple(() =>
+                    {
+                        Assert.That(retorno.ResultadoBruto, !Is.EqualTo(resultadoBruto));
+                        Assert.That(retorno.ResultadoLiquido, !Is.EqualTo(resultadoLiquido));
+                    });
             }
         }
     }
