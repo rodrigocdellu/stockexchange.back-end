@@ -56,7 +56,11 @@ jobs:
         run: dotnet build --no-restore
       - name: Run tests with coverage
         shell: powershell
-        run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
+        run: |
+        dotnet test --no-build --verbosity normal `
+            /p:CollectCoverage=true `
+            /p:CoverletOutputFormat=opencover `
+            /p:CoverletOutput=TestResults/coverage.opencover.xml
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

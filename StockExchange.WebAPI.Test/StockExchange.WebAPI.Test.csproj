@@ -8,9 +8,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     
-
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+	
+	<CollectCoverage>true</CollectCoverage>
+	<CoverletOutputFormat>opencover</CoverletOutputFormat>
+	<CoverletOutput>$(OutputDirectory)coverage.opencover.xml</CoverletOutput>
   </PropertyGroup>
 
   <ItemGroup>
