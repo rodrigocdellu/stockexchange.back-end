@@ -21,7 +21,7 @@ public class UT_CdbService
         this.Samples = TestHelper.LoadData();
 
         // Do the tests
-        Assert.IsNotNull(this.Samples);
+        Assert.That(this.Samples, Is.Not.Null);
 
         // Create the service
         this._CdbService = new CdbService();
@@ -65,7 +65,7 @@ public class UT_CdbService
         this.Samples = TestHelper.LoadData();
 
         // Do the tests
-        Assert.IsNotNull(this.Samples);
+        Assert.That(this.Samples, Is.Not.Null);
 
         // Create the service
         this._CdbService = new CdbService();
