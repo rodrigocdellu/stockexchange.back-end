@@ -45,6 +45,8 @@ dotnet run
 
 **IMPORTANTE**: Antes de executar verifique se 5041 é a porta em que o .NET liberou a aplicação.
 
+3. Neste momento siga os passos presentes no [stockexchange.front-end](https://github.com/rodrigocdellu/stockexchange.front-end) para subir a aplicação **StockExchange.AngularUI**. Assim você poderá verificar a comunicação front-end (Angular CLI) e back-end (.NET Core).
+
 ### 📦 Ambiente de Produção (Docker)
 
 1. Com o **Docker** devidamente instalado, execute o seguinte comando no diretório que contém o arquivo `Dockerfile`:
@@ -59,7 +61,7 @@ docker build -t stockexchange.webapi .
 docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 ```
 
-3. A aplicação poderá ser acessada em ambiente de produção pelo endereço:
+3. A aplicação **StockExchange.WebAPI** poderá ser acessada em ambiente de produção pelo endereço:
 
 [http://localhost:7200](http://localhost:7200)
 
