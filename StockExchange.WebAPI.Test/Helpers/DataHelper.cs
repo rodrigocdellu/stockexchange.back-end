@@ -7,7 +7,7 @@ namespace StockExchange.WebAPI.Test.Helpers
     {
         private const string DEFAULTSAMPLEDATAPATH = @"Data/RetornoSample.json";
 
-        internal static List<RetornoContainerHelper> LoadData(string sampleDataPath = DataHelper.DEFAULTSAMPLEDATAPATH)
+        internal static List<RetornoContainerHelper>? LoadData(string sampleDataPath = DataHelper.DEFAULTSAMPLEDATAPATH)
         {
             try
             {
@@ -50,6 +50,20 @@ namespace StockExchange.WebAPI.Test.Helpers
 
             if (!decimal.TryParse(retornoValido.ResultadoLiquido, NumberStyles.Any, CultureInfo.InvariantCulture, out resultadoLiquido))
                 throw new InvalidCastException($"O valor fornecido não é válido. Por favor, corrija o paramêtro 'ResultadoLiquido': '{retornoValido.ResultadoLiquido}.");
+        }
+
+        internal static TimeZoneInfo? GetBrasilianTimeZone()
+        {
+            // Looking for a Brazil/SãoPaulo timezone due to Docker Container timezone
+            return TimeZoneInfo.GetSystemTimeZones()
+                .FirstOrDefault(internalTimeZone =>
+                    (internalTimeZone.Id.Contains("Brazil", StringComparison.OrdinalIgnoreCase) ||
+                    internalTimeZone.Id.Contains("E. South America", StringComparison.OrdinalIgnoreCase) ||
+                    internalTimeZone.Id.Contains("America/Sao_Paulo", StringComparison.OrdinalIgnoreCase) ||
+                    internalTimeZone.DisplayName.Contains("Brazil", StringComparison.OrdinalIgnoreCase) ||
+                    internalTimeZone.DisplayName.Contains("Sao Paulo", StringComparison.OrdinalIgnoreCase)) &&
+                    internalTimeZone.GetUtcOffset(DateTime.Now) == TimeSpan.FromHours(-3)
+                );
         }
     }
 }

@@ -20,6 +20,9 @@ public class UT_CdbService
         // Load data
         this.Samples = DataHelper.LoadData();
 
+        // Do the tests
+        Assert.IsNotNull(this.Samples);
+
         // Create the service
         this._CdbService = new CdbService();
 
@@ -55,6 +58,9 @@ public class UT_CdbService
     {
         // Load data
         this.Samples = DataHelper.LoadData();
+
+        // Do the tests
+        Assert.IsNotNull(this.Samples);
 
         // Create the service
         this._CdbService = new CdbService();
