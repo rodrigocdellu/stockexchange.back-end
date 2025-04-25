@@ -14,7 +14,7 @@ public class ApplicationService : IApplicationService
     public ApplicationService()
     {
         // Get the brasilian timezone
-        var brazilTimeZone = GetBrasilianTimeZone();
+        var brazilTimeZone = ApplicationService.GetBrasilianTimeZone();
 
         // If the Brazil/SãoPaulo timezone was not found, used the UTC timezone
         if (brazilTimeZone == null)
