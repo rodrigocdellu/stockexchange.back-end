@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
+﻿using System.Globalization;
 using Newtonsoft.Json;
 
 namespace StockExchange.WebAPI.Test.Helpers
