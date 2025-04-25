@@ -11,12 +11,14 @@ Este repositório contém uma aplicação **back-end** desenvolvida em **.NET Co
 - 📝 **Editor de Código 1**: [Visual Studio Code v1.99.3](https://code.visualstudio.com/download)
 - 📝 **Editor de Código 2**: [Visual Studio 2022 Community v17.13.6](https://visualstudio.microsoft.com/pt-br/downloads)  
 - 🐳 **Gerenciador de Contêineres**: [Docker Desktop v4.40.0](https://www.docker.com/products/docker-desktop)
-- 👀 **Analisador de Código Estático**: [SonarQube Cloud](https://sonarcloud.io)  
+- 👀 **Analisador de Código Estático e Testes**: [SonarQube Cloud](https://sonarcloud.io)  
 
 ### 🔧 Pacotes Utilizados para o [Back-end](https://github.com/rodrigocdellu/stockexchange.back-end)
 
 - ⚙️ **Framework**: [.NET v6.0.36 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0) com suporte ao [.NET v8.0.408 (LTS)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)  
-- 🐞 **Framework**: [NUnit v3.14.0](https://www.nuget.org/packages/NUnit/3.14.0)  
+- 🐞 **Framework de Teste da Microsoft**: [Microsoft.NET.Test.Sdk v17.8.0](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.8.0)  
+- 🐞 **Framework de Teste**: [NUnit v3.14.0](https://www.nuget.org/packages/NUnit/3.14.0)  
+- 🐞 **Ferramenta para Coletar Code Coverage**: [coverlet.collector v6.0.4](https://www.nuget.org/packages/coverlet.collector/6.0.4)  
   
 ### 🎨 Pacotes Utilizados para o [Front-end](https://github.com/rodrigocdellu/stockexchange.front-end)
 
