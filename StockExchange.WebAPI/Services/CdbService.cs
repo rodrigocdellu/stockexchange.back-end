@@ -72,12 +72,20 @@ public class CdbService : ICdbService
         return estaValido;
     }
 
-    private static bool ValidaNegocio(uint meses, out string? mensagemValidacao)
+    private static bool ValidaNegocio(ref uint meses, ref decimal investimento, out string? mensagemValidacao)
     {
         // A mensagem de validação inicial é vazia
         mensagemValidacao = String.Empty;
 
-        // Valida o o formato e define a mensagem
+        // Valida o formato e define a mensagem
+        if (investimento <= 0)
+        {
+            mensagemValidacao = $"O parâmetro 'investimento' não pode ser negativo. Valor fornecido: '{investimento}'";
+
+            return false;
+        }
+        
+        // Valida o formato e define a mensagem
         if (meses <= 0)
         {
             mensagemValidacao = $"O parâmetro 'meses' não pode ser negativo. Valor fornecido: '{meses}'";
@@ -162,7 +170,7 @@ public class CdbService : ICdbService
         if (CdbService.ValidaEstrutura(ref meses, ref investimento, out mensagemValidacao))
         {
             // Aplica regras de validação do negócio
-            if (CdbService.ValidaNegocio(meses, out mensagemValidacao))
+            if (CdbService.ValidaNegocio(ref meses, ref investimento, out mensagemValidacao))
             {
                 try
                 {

@@ -13,10 +13,10 @@ public class UT_ApplicationService
     }
 
     [Test]
-    public void TestTimeZone()
+    public void Test_FusoHorario()
     {
         // Load data
-        var brasilianTimEZone = DataHelper.GetBrasilianTimeZone();
+        var brasilianTimEZone = TestHelper.GetBrasilianTimeZone();
 
         // Do the tests
         Assert.That(brasilianTimEZone, Is.Not.Null);
@@ -37,7 +37,7 @@ public class UT_ApplicationService
     }
 
     [Test]
-    public void TestStartupTime()
+    public void Test_TempoInicializacao()
     {
         // Create the service
         this._ApplicationService = new ApplicationService();
@@ -55,7 +55,7 @@ public class UT_ApplicationService
     }
 
     [Test]
-    public void TestFrameworkVersion()
+    public void Test_VersaoFramework()
     {
         // Create the service
         this._ApplicationService = new ApplicationService();

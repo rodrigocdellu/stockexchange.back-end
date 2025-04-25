@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace StockExchange.WebAPI.Test.Helpers
 {
-    internal sealed class DataHelper
+    internal sealed class TestHelper
     {
         private const string DEFAULTSAMPLEDATAPATH = @"Data/RetornoSample.json";
 
-        internal static List<RetornoContainerHelper>? LoadData(string sampleDataPath = DataHelper.DEFAULTSAMPLEDATAPATH)
+        internal static List<RetornoContainerHelper>? LoadData(string sampleDataPath = TestHelper.DEFAULTSAMPLEDATAPATH)
         {
             try
             {

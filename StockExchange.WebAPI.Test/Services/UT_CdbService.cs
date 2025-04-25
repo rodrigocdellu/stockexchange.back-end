@@ -15,10 +15,10 @@ public class UT_CdbService
     }
 
     [Test]
-    public void TestValidResults()
+    public void Test_ResultadosInvestimentosValidos()
     {
         // Load data
-        this.Samples = DataHelper.LoadData();
+        this.Samples = TestHelper.LoadData();
 
         // Do the tests
         Assert.IsNotNull(this.Samples);
@@ -39,7 +39,7 @@ public class UT_CdbService
                 decimal resultadoLiquido;
 
                 // Cast variables for the service
-                DataHelper.CastData(retornoValido, out investimento, out meses, out resultadoBruto, out resultadoLiquido);
+                TestHelper.CastData(retornoValido, out investimento, out meses, out resultadoBruto, out resultadoLiquido);
 
                 // Call the service
                 var retorno = this._CdbService.SolicitarCalculoInvestimento(investimento, meses).Result.Data;
@@ -54,10 +54,10 @@ public class UT_CdbService
     }
 
     [Test]
-    public void TestInvalidResults()
+    public void Test_ResultadosInvestimentosInvalidos()
     {
         // Load data
-        this.Samples = DataHelper.LoadData();
+        this.Samples = TestHelper.LoadData();
 
         // Do the tests
         Assert.IsNotNull(this.Samples);
@@ -78,7 +78,7 @@ public class UT_CdbService
                 decimal resultadoLiquido;
 
                 // Cast variables for the service
-                DataHelper.CastData(retornoInvalido, out investimento, out meses, out resultadoBruto, out resultadoLiquido);
+                TestHelper.CastData(retornoInvalido, out investimento, out meses, out resultadoBruto, out resultadoLiquido);
 
                 // Call the service
                 var retorno = this._CdbService.SolicitarCalculoInvestimento(investimento, meses).Result.Data;
@@ -90,5 +90,39 @@ public class UT_CdbService
                     Assert.That(retorno.ResultadoBruto, !Is.EqualTo(resultadoBruto));
             }
         }
+    }
+
+    [Test]
+    public void Test_MesesZero()
+    {
+        // Load data
+        decimal investimento = 1m;
+        uint meses = 0U;
+
+        // Create the service
+        this._CdbService = new CdbService();
+
+        // Call the service
+        var retorno = this._CdbService.SolicitarCalculoInvestimento(investimento, meses).Result.Data;
+
+        // Do the tests
+        Assert.That(retorno, Is.Null);
+    }
+
+    [Test]
+    public void Test_InvestimentoNegativo()
+    {
+        // Load data
+        decimal investimento = -1m;
+        uint meses = 1U;
+
+        // Create the service
+        this._CdbService = new CdbService();
+
+        // Call the service
+        var retorno = this._CdbService.SolicitarCalculoInvestimento(investimento, meses).Result.Data;
+
+        // Do the tests
+        Assert.That(retorno, Is.Null);
     }
 }
