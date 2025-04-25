@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 using Newtonsoft.Json;
 
 namespace StockExchange.WebAPI.Test.Helpers
@@ -22,7 +23,13 @@ namespace StockExchange.WebAPI.Test.Helpers
                 else
                 {
                     // Load sample data
-                    return JsonConvert.DeserializeObject<List<RetornoContainerHelper>>(jsonString);
+                    var jsonObject = JsonConvert.DeserializeObject<List<RetornoContainerHelper>>(jsonString);
+
+                    // Check the json object
+                    if (jsonObject != null)
+                        return jsonObject;
+                    else
+                        return new List<RetornoContainerHelper>();
                 }
             }
             catch (Exception)
