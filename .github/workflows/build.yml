@@ -80,7 +80,7 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: Tests
-          path: 'TestResults/TestResults.trx'
+          path: '**/TestResults/**/*.trx'
           reporter: dotnet-trx
 
       - name: End Sonar analysis
