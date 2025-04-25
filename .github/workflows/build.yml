@@ -54,7 +54,7 @@ jobs:
             /o:"rodrigocdellu" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
-            /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coverage.cobertura.xml `
+            /d:sonar.cs.opencover.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/*/coveragereport/SonarQube.xml `
             /d:sonar.cs.vstest.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx `
             /d:sonar.cs.nunit.reportsPaths=**/StockExchange.WebAPI.Test/TestResults/TestResults.trx
 
@@ -76,7 +76,7 @@ jobs:
       - name: Convert coverage to opencover
         run: |
           dotnet tool install --global dotnet-reportgenerator-globaltool
-          reportgenerator -reports:**/StockExchange.WebAPI.Test/TestResults/*/coverage.cobertura.xml -targetdir:coveragereport -reporttypes:SonarQube
+          reportgenerator -reports:**/StockExchange.WebAPI.Test/TestResults/*/coverage.cobertura.xml -targetdir:**/StockExchange.WebAPI.Test/TestResults/*/coveragereport -reporttypes:SonarQube
 
       - name: List files in TestResults
         shell: powershell
