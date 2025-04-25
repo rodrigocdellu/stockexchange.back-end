@@ -74,8 +74,8 @@ jobs:
 
       - name: Convert TRX to SonarQube format
         run: |
-          dotnet tool install --global trx2sonar
-          trx2sonar **/StockExchange.WebAPI.Test/TestResults/TestResults.trx -o TestResults/TestResultsForSonar.xml
+          dotnet tool install --global dotnet-trx-to-junit
+          dotnet-trx-to-junit **/StockExchange.WebAPI.Test/TestResults/TestResults.trx -output TestResults/TestResultsForSonar.xml
 
       - name: End Sonar analysis
         env:
