@@ -72,10 +72,13 @@ jobs:
             --logger:"trx;LogFileName=TestResults.trx" `
             --collect:"XPlat Code Coverage;Format=opencover"
 
-      - name: Convert TRX to SonarQube format
-        run: |
-          dotnet tool install --global dotnet-trx-to-junit
-          dotnet-trx-to-junit **/StockExchange.WebAPI.Test/TestResults/TestResults.trx -output TestResults/TestResultsForSonar.xml
+      - name: Convert .trx to JUnit XML (for SonarCloud)
+        uses: dorny/test-reporter@v1
+        with:
+          name: Tests
+          path: '**/StockExchange.WebAPI.Test/TestResults/TestResults.trx'
+          reporter: dotnet-trx
+          output: '**/StockExchange.WebAPI.Test/TestResults/TestResultsForSonar.xml'
 
       - name: End Sonar analysis
         env:
