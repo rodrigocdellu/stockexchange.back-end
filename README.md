@@ -88,9 +88,9 @@ docker run --name stockexchange.webapi -d -p 7200:80 stockexchange.webapi
 
 4. Caso não consiga construir a imagem, você pode baixá-la do meu Docker Hub:
 
-- [Back-end .NET Core]([http://localhost:7000](https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi))
+- [Back-end .NET Core](https://hub.docker.com/r/rodrigocdellu/stockexchange.webapi)
 
-## 💕 Clean Code
+## ❤ Clean Code
 
 Aqui disponibilizo os [resultados da analise estática de cógido](https://sonarcloud.io/project/overview?id=rodrigocdellu_stockexchange-back-end) com as configurações padrão do SonarQube Cloud.
 
