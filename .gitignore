@@ -1,94 +1,92 @@
-# Build Results
-bin/
-obj/
+## Build Results (for .NET and Angular)
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+bld/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+/dist/
+/out-tsc/
+/tmp/
+/bazel-out
+artifacts/
+[Ll]og/
+[Ll]ogs/
 
-# User-specific files
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-
-# Rider
-.idea/
-
-# Visual Studio Code
-.vscode/
-
-# Visual Studio Community 2022
-.vs/
-
-# Mac
-.DS_Store
-
-# Windows
-Thumbs.db
-ehthumbs.db
-desktop.ini
-
-# ASP.NET Core Secrets
-secrets.json
-
-# NuGet
-*.nupkg
-*.snupkg
-*.nuspec
+## .NET Core
 project.lock.json
 project.fragment.lock.json
-artifacts/
 
-# Package caches
-packages/
-**/packages/*
-!**/packages/build/
-!**/packages/repositories.config
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
 
-# Logs
-*.log
+## NuGet Packages
+*.nupkg
+*.snupkg
 
-# Test Results
-TestResults/
-*.trx
-*.coverage
-*.coveragexml
+## Test Artifacts
+CodeCoverage/
+/coverage
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.binlog
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+testem.log
 
-# Publish Output
-publish/
-*.pubxml
-*.publishproj
+## Angular Environment Files (optional)
+/src/environments/environment.prod.ts
+/src/environments/environment.ts
 
-# Resharper
-_ReSharper*/
-*.DotSettings.user
+## Angular Cache
+/.angular/cache/
+.angular/
 
-# DotCover
-*.dcvr
+## Node and Logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/libpeerconnection.log
 
-# Entity Framework Migrations
-Migrations/
-
-# dotnet-watch
-**/*.db
-
-# LocalDB
-*.mdf
-*.ldf
-
-# JetBrains Rider
-.idea/
-
-# Temporary files
+## Temporary & Misc Files
 ~$*
-*.tmp
+*~
+.sass-cache/
+/typings
+/connect.lock
 
-# Backup files
-*.bak
+## System Files
+.DS_Store
+Thumbs.db
 
-# Auto-generated files
-Generated_Code/
-
-# VS for Mac
+## IDEs and Editors
+.idea/
 .vscode/
-.vscode-test/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-project
+*.sublime-workspace
+.history/*
 
-# Global.json lock file
-global.json.lock
+## Visual Studio
+.vs/
+
+## Gitignore reference:
+# https://github.com/github/gitignore/blob/main/Dotnet.gitignore
+# https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
